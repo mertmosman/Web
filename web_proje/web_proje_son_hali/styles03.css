@@ -1,0 +1,84 @@
+body {
+    margin-top: 5%;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #fcf8f3;
+  }
+  /* Özgeçmiş Stili */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.education-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.education {
+    margin-bottom: 5%;
+    background-color: #88f3ff;
+    padding: 15px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 125%;
+}
+
+.education a{
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    color:rgb(203, 9, 9); /* Link rengini değiştir */
+}
+
+.skills {
+    margin-top: 30px;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 15px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.progress {
+    height: 100%;
+}
+
+.progress-Cplusplus {
+    background-color: #4CAF50; /* Yeşil */
+    width: 50%; /* C++ yüzdesi */
+}
+
+.progress-Csharp {
+    background-color: #2196F3; /* Mavi */
+    width: 55%; /* C# yüzdesi */
+}
+
+.progress-HTML {
+    background-color: #f44336; /* Kırmızı */
+    width: 60%; /* HTML yüzdesi */
+}
+
+.progress-CSS {
+    background-color: #FFC107; /* Sarı */
+    width: 45%; /* CSS yüzdesi */
+}
+
+.progress-JavaScript {
+    background-color: #9C27B0; /* Mor */
+    width: 25%; /* JavaScript yüzdesi */
+}
+
+.progress span {
+    display: block;
+    text-align: right;
+    line-height: 20px;
+    color: white;
+}

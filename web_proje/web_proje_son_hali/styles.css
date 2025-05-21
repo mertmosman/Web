@@ -1,0 +1,52 @@
+
+.background-image {
+    background-image: url('img/konya01.jpg'); /* Arka plan resmi */
+    background-size: cover;
+    background-position: center top 30%; /* Resmi üstten kırparak ortalamak için */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1000;
+    
+}
+.login-container {
+    background-color: rgba(255, 255, 255, 0.25); /* Arka planı yarı saydam beyaz */
+    padding: 40px; /* Kutu içeriğine boşluk ekleyelim */
+    border-radius: 10px;
+    border-style:inset;
+    text-align: center;
+    width: 300px; /* Kutunun genişliğini belirleyelim */
+    backdrop-filter: blur(2px);
+}
+
+.login-container h3 {
+    font-size: 30px; /* Giriş yazısının boyutunu artıralım */
+    margin-bottom: 20px; /* Giriş yazısının altına boşluk ekleyelim */
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #3251eb;
+    border-radius: 10px;
+    margin-left: -10px;
+}
+
+button[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #d6d436;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}

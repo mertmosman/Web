@@ -1,0 +1,205 @@
+
+
+body{
+background-color: #fcf8f3;
+}
+
+.takim-kutu {
+background-image: url('img/saha_background.jpg');
+color: #ddd;
+font-size: 150%;
+border: 1px solid #ccc;
+border-radius: 1px;
+box-sizing: border-box;
+text-align: center; /* İçeriği ortala */
+line-height: 1.8;
+max-width:90%;
+margin: 90px auto;
+padding: 20px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.takim-kutu h1{
+  color: #ffffff;
+  background-color: #000000;
+  margin-bottom: -5%;
+  line-height: 16 0%;
+}
+
+.takim-kutu img {
+width: 500px; 
+height: 300px;
+margin-top: 30px;
+margin-bottom: 10px;
+margin-left: 5px;
+border: 5px solid #ffffff;
+}
+
+
+
+.takim-kutu h3 {
+margin-top: 120px;
+margin-bottom: -35px;
+}
+
+.takim-kutu table {
+width: 100%;
+border-collapse: collapse;
+margin-top: -10px;
+}
+    
+.takim-kutu table th, .takim-kutu table td {
+border: 1px solid #ffffff;
+padding: 8px;
+text-align: left;
+}
+    
+.takim-kutu table th {
+background-color: #ff2e2e;
+}
+
+.sosyal-medya-iconlar {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  
+}
+
+.sm-kutu{
+  background-color: #ccc;
+  margin-top: -10%;
+  text-align: center;
+  box-sizing: border-box;
+  width: 50%;
+  height: 0 auto;
+  margin-left: 28%;
+  color: #000000;
+  border: 5px solid #000000;
+
+}
+
+.sosyal-medya-iconlar a {
+  font-size: 40px;
+  margin: 0 10px;
+}
+
+.sosyal-medya-iconlar a:first-child {
+  margin-left: 0;
+}
+
+.sosyal-medya-iconlar a:last-child {
+  margin-right: 0;
+}
+
+/* YouTube ikonu için kırmızı renk tanımı */
+.sosyal-medya-iconlar a[href*="youtube.com"] i {
+  color: red;
+}
+
+/* Twitter ikonu için mavi renk tanımı */
+.sosyal-medya-iconlar a[href*="twitter.com"] i {
+  color: #1DA1F2;
+}
+
+/* Instagram ikonu için koyu kırmızı renk tanımı */
+.sosyal-medya-iconlar a[href*="instagram.com"] i {
+  color: #C13584;
+}
+#container {
+  text-align: center;
+}
+
+#container ul {
+  text-align: left;
+  margin: auto;
+  max-width: 600px; /* Yazının maksimum genişliğini belirleyebilirsiniz */
+}
+
+
+.ytvideo{
+  text-align: center; /* Videoyu ortalamak için */
+  width: 105%; /* Videoyu genişlik olarak container'a sığdır */
+  height: 100%;
+  height: auto; /* Yükseklik oranını koru */
+  display: block; /* Dikey hizalama için */
+  margin: 0 auto; /* Yatayda ortalamak için */
+  margin-top: 75px;
+
+}
+
+.ytvideo iframe {
+  width: 700px; /* Video genişliğini 100% olarak ayarla */
+  height: 450px; /* Video yüksekliğini istediğiniz bir değer olarak ayarlayabilirsiniz */
+  border: 5px solid #ffffff;
+}
+
+
+@media (max-width: 768px) {
+
+  .ytvideo iframe {
+    max-width: 100%; /* Videoyu ekranın tam genişliğine yay */
+    height: auto; /* Yüksekliği otomatik ayarla */
+    width: 100%; /* Video genişliğini 100% olarak ayarla */
+    height: 250px; /* Video yüksekliğini istediğiniz bir değer olarak ayarlayabilirsiniz */
+  }
+  
+  
+  .ytvideo {
+    max-width: 100%; /* Videoyu ekranın tam genişliğine yay */
+    height: auto; /* Yüksekliği otomatik ayarla */
+    margin-left: auto; /* Sol kenarı otomatik hizala */
+    margin-right: auto; /* Sağ kenarı otomatik hizala */
+  }
+
+  .sm-kutu{
+  width: 100%; /* Resmi ekran genişliğine yay */
+  height: auto; /* Yüksekliği otomatik ayarla */
+  margin-left: auto; /* Sol kenarı otomatik hizala */
+  margin-right: auto; /* Sağ kenarı otomatik hizala */
+
+  }
+
+  .sosyal-medya-iconlar{
+  width: 100%; /* Resmi ekran genişliğine yay */
+  height: auto; /* Yüksekliği otomatik ayarla */
+  margin-left: auto; /* Sol kenarı otomatik hizala */
+  margin-right: auto; /* Sağ kenarı otomatik hizala */
+
+  }
+
+  .takim-kutu img{
+  width: 100%; /* Resmi ekran genişliğine yay */
+  height: auto; /* Yüksekliği otomatik ayarla */
+  margin-left: auto; /* Sol kenarı otomatik hizala */
+  margin-right: auto; /* Sağ kenarı otomatik hizala */
+  }
+
+
+  body {
+    font-size: 0.875rem; /* Küçültülmüş yazı tipi boyutu */
+}
+h1 {
+    font-size: 1.5rem; /* Küçültülmüş başlık boyutu */
+}
+h2 {
+    font-size: 1.25rem; /* Küçültülmüş başlık boyutu */
+}
+p {
+    font-size: 0.875rem; /* Küçültülmüş paragraf yazı tipi boyutu */
+}
+ul, ol {
+    font-size: 0.875rem; /* Küçültülmüş liste yazı tipi boyutu */
+}
+/* Menü ve diğer elemanlar için özel ayarlar */
+.menu-bar ul li a {
+    font-size: 0.875rem;
+}
+.takim-kutu {
+    padding: 10px; /* İç boşluk ayarı */
+}
+
+
+
+}
+
+

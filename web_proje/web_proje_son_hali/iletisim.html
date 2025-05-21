@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim Formu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- jQuery kütüphanesini ekliyoruz -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- CSS dosyasını ekliyoruz -->
+    <link rel="stylesheet" href="styles01.css">
+    <link rel="stylesheet" href="styles04.css">
+
+</head>
+<body>
+    <!-- Menü -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+    <div class="menu-bar">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-user"></i>Hakkımda</a></li>
+            <li><a href="cv.html"><i class="fas fa-address-card"></i>Öz Geçmişim</a></li>
+            <li><a href="ilgialanlarim.html"><i class="fas fa-pencil"></i>İlgi Alanlarım</a></li>
+            <li><a href="sehrim.html"><i class="fas fa-city"></i>Şehrim</a></li>
+            <li><a href="takimimiz.html"><i class="fas fa-trophy"></i>Takımımız</a></li>
+            <li  class="active"><a href="iletisim.html"><i class="fas fa-phone"></i>İletişim</a></li>
+            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i>Giriş Yap</a></li>
+        </ul>
+    </div>
+
+    <h1>İletişim Formu</h1>
+    <!-- Form elementi -->
+    <form id="contactForm" action="gonder.php"  method="post" enctype="multipart/form-data">
+        <label for="name">İsim:</label>
+        <!-- İsim input alanı -->
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">E-posta:</label>
+        <!-- E-posta input alanı -->
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Telefon:</label>
+        <!-- Telefon input alanı -->
+        <input type="text" id="phone" name="phone" required><br><br>
+
+        <label for="message">Mesaj:</label>
+        <!-- Mesaj textarea alanı -->
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <label for="jobStatus">İş Durumu:</label>
+        <!-- İş durumu dropdown listesi -->
+        <select id="jobStatus" name="jobStatus" required>
+            <option value="">Seçiniz</option>
+            <option value="çalışıyor">Çalışıyor</option>
+            <option value="işsiz">İşsiz</option>
+            <option value="Öğrenci">Öğrenci</option>
+        </select><br><br>
+
+        <!-- Cinsiyet radio butonları -->
+        <div class="gender-radio">
+            <label for="gender">Cinsiyet:</label><br><br>
+            <label><input type="radio" name="gender" value="erkek" required>Erkek</label>
+            <label><input type="radio" name="gender" value="kadın" required>Kadın</label>
+            <label><input type="radio" name="gender" value="belirtmek istemiyorum" required>Belirtmek İstemiyorum</label>
+        </div><br><br>
+
+        <label for="birthDate">Doğum Tarihi:</label>
+        <!-- Doğum tarihi input alanı -->
+        <input type="date" id="birthDate" name="birthDate" required><br><br>
+
+        <label for="file">Dosya Yükle:</label>
+        <!-- Dosya yükleme alanı -->
+        <input type="file" id="file" name="file"><br><br>
+
+        <!-- JavaScript ile Gönder butonu -->
+        <button type="button" id="submitWithJS">JavaScript ile Gönder</button>
+        <!-- jQuery ile Gönder butonu -->
+        <button type="button" id="jquerySubmit">jQuery ile Gönder</button>
+        <!-- Formu temizle butonu -->
+        <button type="button" onclick="handleClearForm()">Temizle</button>
+        </form>
+        
+        <!-- JavaScript kodu -->
+<script>
+    function handleSubmitWithJS(event) {
+        event.preventDefault(); // Formun varsayılan davranışını engelle
+
+        // Form verilerini al
+        const formData = new FormData(document.getElementById('contactForm'));
+
+        // İsim alanı boş mu kontrol et
+        if (!formData.get('name')) {
+            alert('Lütfen isminizi girin');
+            return;
+        }
+
+        // E-posta alanı boş mu ve geçerli bir e-posta mı kontrol et
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!formData.get('email') || !emailPattern.test(formData.get('email'))) {
+            alert('Lütfen geçerli bir e-posta adresi girin');
+            return;
+        }
+
+        // Telefon alanı boş mu ve sadece rakamlardan oluşuyor mu kontrol et
+        const phonePattern = /^\d+$/;
+        if (!formData.get('phone')) {
+            alert('Telefon numarası boş bırakılamaz');
+            return;
+        }
+        if (!phonePattern.test(formData.get('phone'))) {
+            alert('Telefon numarası sadece rakamlardan oluşmalıdır');
+            return;
+        }
+
+        // Mesaj alanı boş mu kontrol et
+        if (!formData.get('message')) {
+            alert('Lütfen bir mesaj girin');
+            return;
+        }
+
+        // İş durumu seçilmiş mi kontrol et
+        if (!formData.get('jobStatus')) {
+            alert('Lütfen iş durumunuzu seçin');
+            return;
+        }
+
+        // Cinsiyet seçilmiş mi kontrol et
+        if (!formData.get('gender')) {
+            alert('Lütfen cinsiyetinizi seçin');
+            return;
+        }
+
+        // Doğum tarihi seçilmiş mi ve 13 yaşından büyük mü kontrol et
+        const birthDate = formData.get('birthDate');
+        if (!birthDate || !isOver13(birthDate)) {
+            alert('13 yaşından büyük olmalısınız');
+            return;
+        }
+
+        // Formu gönder
+        document.getElementById('contactForm').submit();
+    }
+
+    // JavaScript ile gönderme butonunu tıklama olayına bağla
+    document.getElementById('submitWithJS').addEventListener('click', handleSubmitWithJS);
+
+    function isOver13(birthDate) {
+        const today = new Date();
+        const birth = new Date(birthDate);
+        let age = today.getFullYear() - birth.getFullYear();
+        const monthDiff = today.getMonth() - birth.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+            age--;
+        }
+        return age >= 13;
+    }
+
+    function handleClearForm() {
+        document.getElementById('contactForm').reset();
+    }
+
+    // jQuery kullanarak form gönderme işlemi
+    $(document).ready(function() {
+        $('#jquerySubmit').click(function(event) {
+            event.preventDefault(); // Formun varsayılan davranışını engelle
+
+            // Form verilerini al
+            const formData = new FormData(document.getElementById('contactForm'));
+
+            // İsim alanı boş mu kontrol et
+            if (!formData.get('name')) {
+                alert('Lütfen isminizi girin');
+                return;
+            }
+
+            // E-posta alanı boş mu ve geçerli bir e-posta mı kontrol et
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!formData.get('email') || !emailPattern.test(formData.get('email'))) {
+                alert('Lütfen geçerli bir e-posta adresi girin');
+                return;
+            }
+
+            // Telefon alanı boş mu ve sadece rakamlardan oluşuyor mu kontrol et
+            const phonePattern = /^\d+$/;
+            if (!formData.get('phone')) {
+                alert('Telefon numarası boş bırakılamaz');
+                return;
+            }
+            if (!phonePattern.test(formData.get('phone'))) {
+                alert('Telefon numarası sadece rakamlardan oluşmalıdır');
+                return;
+            }
+
+            // Mesaj alanı boş mu kontrol et
+            if (!formData.get('message')) {
+                alert('Lütfen bir mesaj girin');
+                return;
+            }
+
+            // İş durumu seçilmiş mi kontrol et
+            if (!formData.get('jobStatus')) {
+                alert('Lütfen iş durumunuzu seçin');
+                return;
+            }
+
+            // Cinsiyet seçilmiş mi kontrol et
+            if (!formData.get('gender')) {
+                alert('Lütfen cinsiyetinizi seçin');
+                return;
+            }
+
+            // Doğum tarihi seçilmiş mi ve 13 yaşından büyük mü kontrol et
+            const birthDate = formData.get('birthDate');
+            if (!birthDate || !isOver13(birthDate)) {
+                alert('13 yaşından büyük olmalısınız');
+                return;
+            }
+
+            // Formu gönder
+            document.getElementById('contactForm').submit();
+        });
+    });
+</script>
+</body>
+</html>

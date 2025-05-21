@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #fcf8f3;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    background-image: url('img/arkaplan.jpeg');
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    
+}
+
+
+
+.menu-bar {
+    background-image: url('img/arkaplan.jpeg');
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.menu-bar ul {
+    font-family: sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Menü öğelerini yatayda hizalar */
+}
+
+.menu-bar ul li {
+    margin: 15px;
+    padding: 15px;
+}
+
+.menu-bar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.menu-bar ul li.active, .menu-bar ul li:hover {
+    background: #d4c995;
+    border-radius: 10px;
+}
+
+.menu-bar .fas {
+    margin-right: 6px;
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-toggle:checked + .menu-icon + .menu-bar ul {
+        display: block;
+    }
+
+    .menu-bar ul {
+        display: none;
+        position: absolute;
+        top: calc(100% + 37px); /* Menünün tamamen açık olması için 100% + bir miktar ekleniyor */
+        left: 0;
+        width: 100%;
+        text-align: center;
+        background-image: url('img/arkaplan.jpeg');
+        z-index: 999;
+        flex-direction: column; /* Dikey hizalama */
+    }
+
+    .menu-bar ul li {
+        display: block;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .menu-bar ul li a {
+        color: #fff;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
