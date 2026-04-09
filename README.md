@@ -16,7 +16,7 @@ Projeyi yerelde çalıştırabilmek için şu araçlara ihtiyacınız var:
 
 ## 🛠️ Kullanılan Araçlar
 
-- **HTML / CSS / JavaScript** – Temel yapı ve etkileşimler  
+- **HTML5 / CSS / JavaScript** – Temel yapı ve etkileşimler  
 - **PHP** – Sunucu tarafı işlemleri  
 - **Bootstrap / Tailwind** – Responsive stil frameworkleri  
 - **VS Code / PhpStorm** – Kodlama ortamları  
