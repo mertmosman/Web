@@ -1,52 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
 
+/* ARKA PLAN */
 .background-image {
-    background-image: url('img/konya01.jpg'); /* Arka plan resmi */
-    background-size: cover;
-    background-position: center top 30%; /* Resmi üstten kırparak ortalamak için */
     height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('img/arkaplan.jpeg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1000;
-    
 }
+
+/* LOGIN KART */
 .login-container {
-    background-color: rgba(255, 255, 255, 0.25); /* Arka planı yarı saydam beyaz */
-    padding: 40px; /* Kutu içeriğine boşluk ekleyelim */
-    border-radius: 10px;
-    border-style:inset;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 15px;
+    width: 320px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     text-align: center;
-    width: 300px; /* Kutunun genişliğini belirleyelim */
-    backdrop-filter: blur(2px);
+    color: white;
 }
 
-.login-container h3 {
-    font-size: 30px; /* Giriş yazısının boyutunu artıralım */
-    margin-bottom: 20px; /* Giriş yazısının altına boşluk ekleyelim */
+.login-container h2 {
+    margin-bottom: 25px;
 }
 
+/* INPUT */
 .input-group {
-    margin-bottom: 20px;
+    position: relative;
+    margin-bottom: 25px;
 }
 
-input[type="email"],
-input[type="password"] {
-    width: 70%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #3251eb;
-    border-radius: 10px;
-    margin-left: -10px;
-}
-
-button[type="submit"] {
-    width: 50%;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #d6d436;
-    color: #fff;
+.input-group input {
+    width: 100%;
+    padding: 12px 10px;
     border: none;
-    border-radius: 5px;
+    border-bottom: 2px solid white;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+}
+
+/* LABEL ANİMASYON */
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    color: #ddd;
+    font-size: 14px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* FOCUS EFEKT */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -8px;
+    font-size: 12px;
+    color: #fcc138;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #fcc138;
+    color: #333;
+    font-weight: 600;
     cursor: pointer;
-    
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e0aa2f;
+    transform: scale(1.03);
+}
+
+/* MOBİL */
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
 }
