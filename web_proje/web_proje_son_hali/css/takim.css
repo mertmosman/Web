@@ -1,0 +1,52 @@
+.hero {
+    background: linear-gradient(135deg, #4b0082, #7b2cbf);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+}
+
+/* TABLO */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+table th {
+    background: #4b0082;
+    color: white;
+}
+
+/* SOSYAL */
+.sosyal .icons {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* MOBİL */
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    iframe {
+        height: 200px;
+    }
+}
