@@ -14,25 +14,20 @@ if ($username == "$first_letter$student_number@sakarya.edu.tr" && $password == $
     echo "
     <html>
     <head>
+        <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;600;700&display=swap' rel='stylesheet'>
         <style>
+        body { background: #0f172a; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
         .success-message {
-            background-color: #dff0d8;
-            border: 1px solid #d6e9c6;
-            color: #4CAF50;
-            padding: 15px;
-            margin: 20px auto;
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.5);
+            color: #10b981;
+            padding: 20px;
             max-width: 400px;
-            border-radius: 5px;
-            text-align: center; /* Metni ortala */
+            border-radius: 16px;
+            text-align: center;
+            backdrop-filter: blur(16px);
         }
-        .success-message h3 {
-            font-size: 24px;
-            margin-top: 0;
-        }
-        .success-message p {
-            font-size: 18px;
-            margin-bottom: 0;
-        }
+        .success-message h3 { font-family: 'Outfit', sans-serif; font-size: 24px; margin: 0; }
         </style>
     </head>
     <body>
@@ -49,25 +44,20 @@ else
     echo "
     <html>
     <head>
+        <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;600;700&display=swap' rel='stylesheet'>
         <style>
+        body { background: #0f172a; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
         .error-message {
-            background-color: #f2dede;
-            border: 1px solid #ebccd1;
-            color: #a94442;
-            padding: 15px;
-            margin: 20px auto;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            color: #ef4444;
+            padding: 20px;
             max-width: 400px;
-            border-radius: 5px;
-            text-align: center; /* Metni ortala */
+            border-radius: 16px;
+            text-align: center;
+            backdrop-filter: blur(16px);
         }
-        .error-message h3 {
-            font-size: 24px;
-            margin-top: 0;
-        }
-        .error-message p {
-            font-size: 18px;
-            margin-bottom: 0;
-        }
+        .error-message h3 { font-family: 'Outfit', sans-serif; font-size: 24px; margin: 0; }
         </style>
     </head>
     <body>

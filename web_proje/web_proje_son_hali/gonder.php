@@ -37,48 +37,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gönderilen Bilgiler</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f9f9f9;
         }
         .container {
-            width: 80%;
-            max-width: 600px;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        table {
-            border-collapse: collapse;
             width: 100%;
-            margin: 20px 0;
+            max-width: 600px;
+            background: var(--surface-color);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--glass-shadow);
+            margin-top: 2rem;
         }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .btn-container {
-            text-align: center;
-        }
+        table { margin-top: 1rem; }
+        .btn-container { text-align: center; margin-top: 2rem; }
         .btn {
+            display: inline-block;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: var(--primary-color);
             color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            border-radius: 8px;
             text-decoration: none;
+            transition: 0.3s;
         }
+        .btn:hover { background: #0ea5e9; }
     </style>
 </head>
 <body>

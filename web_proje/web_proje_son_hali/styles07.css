@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f4f4;
+}
+
+/* MENU */
+.menu-bar {
+    background: #222;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-bar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu-bar li {
+    margin: 0 15px;
+}
+
+.menu-bar a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-bar .active {
+    background: #555;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* ŞEHİR */
+.sehir {
+    margin-top: 100px;
+    text-align: center;
+    padding: 40px;
+    background: white;
+}
+
+.sehir h1 {
+    margin-bottom: 20px;
+}
+
+.sehir p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.stats {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.stats i {
+    font-size: 30px;
+}
+
+/* SLIDER */
+.carousel img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* KARTLAR */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* MOBİL */
+@media(max-width:768px){
+
+.menu-bar ul {
+    flex-direction: column;
+    display: none;
+}
+
+#menu-toggle:checked + .menu-icon + .menu-bar ul {
+    display: flex;
+}
+
+.menu-icon {
+    display: block;
+    background: #222;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1001;
+}
+
+.stats {
+    flex-direction: column;
+}
+
+.carousel img {
+    height: 250px;
+}
+}
