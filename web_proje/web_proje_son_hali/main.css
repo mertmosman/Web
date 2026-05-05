@@ -348,69 +348,216 @@ form#contactForm select:focus {
   border-radius: 8px;
 }
 
-/* Sehrim */
-.sehir-bilgileri {
-  background: var(--surface-color);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  backdrop-filter: blur(16px);
+/* Sehrim - Modernized */
+.sehir-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
-.sehir-istatistikleri {
-  display: flex;
+
+.sehir-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(251, 191, 36, 0.1));
+  border-left: 4px solid var(--primary-color);
+  border-right: 4px solid var(--secondary-color);
+}
+.sehir-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.sehir-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+.sehir-card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.sehir-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.sehir-card:hover::before {
+  transform: scaleX(1);
+}
+.sehir-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+.card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem auto;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  border: 1px solid var(--glass-border);
+}
+
+.sehir-istatistikleri-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
 }
 .istatistik {
-  background: rgba(255,255,255,0.05);
-  padding: 1.5rem;
-  border-radius: 12px;
+  padding: 2rem;
   text-align: center;
-  flex: 1;
+  transition: transform 0.3s;
+}
+.istatistik:hover {
+  transform: scale(1.05);
 }
 .istatistik i {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--secondary-color);
   margin-bottom: 1rem;
 }
 
-.layout {
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.yerler-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
-.paper {
-  background: var(--surface-color);
-  border: 1px solid var(--glass-border);
-  padding: 1.5rem;
-  border-radius: 12px;
+.yer-card {
+  padding: 2rem 1.5rem;
   text-align: center;
-  backdrop-filter: blur(16px);
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.yer-card:hover {
+  border-bottom-color: var(--primary-color);
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-5px);
+}
+.yer-icon {
+  font-size: 2.5rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  transition: color 0.3s, transform 0.3s;
+}
+.yer-card:hover .yer-icon {
+  color: var(--secondary-color);
+  transform: scale(1.1);
 }
 
-/* Takimimiz */
-.takim-kutu {
-  background: var(--surface-color);
-  border: 1px solid var(--glass-border);
+/* Takimimiz Modernized */
+.takim-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+.takim-hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, rgba(88, 28, 135, 0.2), rgba(255, 255, 255, 0.05));
+  border-top: 4px solid #581c87;
   border-radius: 16px;
+}
+.takim-logo-placeholder {
+  font-size: 4rem;
+  color: #c084fc;
+  margin-bottom: 1rem;
+}
+.takim-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #f3e8ff;
+}
+.takim-subtitle {
+  font-size: 1.2rem;
+  color: #c084fc;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.takim-info {
   padding: 2rem;
   margin-bottom: 2rem;
-  backdrop-filter: blur(16px);
+  text-align: center;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
+.takim-info h2 {
+  color: #c084fc;
 }
-th, td {
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid var(--glass-border);
+.takim-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
-th {
-  background: rgba(255,255,255,0.05);
-  color: var(--secondary-color);
+.t-stat {
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.t-stat:hover {
+  transform: translateY(-5px);
+  border-color: #c084fc;
+}
+.t-stat i {
+  font-size: 2rem;
+  color: #c084fc;
+  margin-bottom: 1rem;
+}
+.t-stat h4 {
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+.t-stat p {
+  color: var(--text-muted);
+  margin: 0;
+}
+.ytvideo.glass {
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.sm-kutu.glass {
+  padding: 2rem;
+}
+.justify-center {
+  justify-content: center;
+}
+.text-center {
+  text-align: center;
 }
 
 .ytvideo iframe {
